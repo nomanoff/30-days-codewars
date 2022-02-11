@@ -17,7 +17,7 @@ Btw, feel free to reach out to me! 🌐 <br />
 
 <details><summary><b>Day 0</b></summary>
 
-##### 0. Even or Odd?
+#### Even or Odd?
 
 > 8 kyu
 
