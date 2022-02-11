@@ -23,9 +23,7 @@ Btw, feel free to reach out to me! 🌐 <br />
 
 ###### Description:
 
-<span>
-Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
-</span>
+> Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 
 ```javascript
 function even_or_odd(number) {}
@@ -41,7 +39,9 @@ function even_or_odd(number) {
 }
 ```
 
-#### Best Answers
+</details>
+
+<details><summary><b>Best Answer</b></summary>
 
 ```javascript
 function even_or_odd(number) {
