@@ -153,25 +153,73 @@ function digital_root(n) {
 <details><summary><b>My Answer 😅</b></summary>
 
 ```javascript
+function digital_root(n) {
+  let newNum;
+  let justNum = n
+    .toString()
+    .split("")
+    .map((num) => parseInt(num, 10));
 
+  newNum = justNum.reduce((partialSum, a) => partialSum + a, 0);
+
+  if (newNum.toString().length > 1) {
+    return digital_root(newNum);
+  } else {
+    return newNum;
+  }
+}
 ```
 
 </details>
 
 <details><summary><b>Best Answers ✅</b></summary>
 
-> Top ranked answer:
+> Top ranked answer, wtf? 🤯:
 
 ```javascript
-
+function digital_root(n) {
+  return ((n - 1) % 9) + 1;
+}
 ```
 
-> 2nd ranked answer 👀:
+<details><summary><b>Top comments for this solution. Just read for fun 😅</b></summary>
+
+> - dude speaks matrix languague
+
+> - mathematics!
+
+> - what kind of sorcery is this?
+
+> - my brain is damaged!
+
+> - wait, what?
+
+> - hmmm... wtf? totally mind boggling
+
+> - bruh!!!
+
+> - I am not a coder.
+
+> - The simplicity is extremely frustrating. Thank you
+
+> - I am quitting programming after this
+
+</details>
+
+> 2nd ranked answer 👍:
 
 ```javascript
-function spinWords(string){
-  return string.replace(/\w{5,}/g, function(w) { return w.split('').reverse().join('') })
-}
+function digital_root(n) {
+  if (n < 10) return n;
+
+  return digital_root(
+    n
+      .toString()
+      .split("")
+      .reduce(function (acc, d) {
+        return acc + +d;
+      }, 0)
+  );
 }
 ```
 
