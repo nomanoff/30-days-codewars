@@ -250,7 +250,12 @@ function disemvowel(str) {
 <details><summary><b>My Answer 😅</b></summary>
 
 ```javascript
-
+function disemvowel(str) {
+  return str
+    .split(" ")
+    .map((x) => x.replace(/[aAeEiIoOuU]/g, ""))
+    .join(" ");
+}
 ```
 
 </details>
@@ -260,13 +265,24 @@ function disemvowel(str) {
 > Top ranked answer (writter by a human 😅):
 
 ```javascript
-
+function disemvowel(str) {
+  return str.replace(/[aeiou]/gi, "");
+}
 ```
 
 > 2nd ranked answer 👀:
 
 ```javascript
+function disemvowel(str) {
+  var vowels = ["a", "e", "i", "o", "u"];
 
+  return str
+    .split("")
+    .filter(function (el) {
+      return vowels.indexOf(el.toLowerCase()) == -1;
+    })
+    .join("");
+}
 ```
 
 </details>
