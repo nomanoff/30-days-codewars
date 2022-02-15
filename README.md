@@ -291,7 +291,7 @@ function disemvowel(str) {
 
 ---
 
-<details><summary><b>Day 5</b></summary>
+<details><summary><b>Day 4</b></summary>
 
 #### Array.diff
 
