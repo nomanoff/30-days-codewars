@@ -288,3 +288,67 @@ function disemvowel(str) {
 </details>
 
 </details>
+
+---
+
+<details><summary><b>Day 5</b></summary>
+
+#### Array.diff
+
+> 6 kyu
+
+###### Description:
+
+> Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+
+> It should remove all values from list a, which are present in list b keeping their order.
+
+```javascript
+arrayDiff([1, 2], [1]) == [2];
+```
+
+> If a value is present in b, all of its occurrences must be removed from the other:
+
+```javascript
+arrayDiff([1, 2, 2, 2, 3], [2]) == [1, 3];
+```
+
+<details><summary><b>My Answers 😅</b></summary>
+
+```javascript
+// Solution 1:
+function arrayDiff(a, b) {
+  return a.filter((val) => !b.includes(val));
+}
+
+// Solution 2:
+function arrayDiff(a, b) {
+  return a.filter((val) => b.indexOf(val) === -1);
+}
+```
+
+</details>
+
+<details><summary><b>Best Answers ✅</b></summary>
+
+> Top ranked answer 🤯:
+
+```javascript
+function array_diff(a, b) {
+  return a.filter((e) => !b.includes(e));
+}
+```
+
+> 2nd ranked answer 👍:
+
+```javascript
+function array_diff(a, b) {
+  return a.filter(function (x) {
+    return b.indexOf(x) == -1;
+  });
+}
+```
+
+</details>
+
+</details>
