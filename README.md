@@ -359,7 +359,7 @@ function array_diff(a, b) {
 
 ####
 
-> 6 kyu
+> 7 kyu
 
 ###### Description:
 
