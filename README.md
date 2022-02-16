@@ -352,3 +352,66 @@ function array_diff(a, b) {
 </details>
 
 </details>
+
+---
+
+<details><summary><b>Day 5</b></summary>
+
+####
+
+> 6 kyu
+
+###### Description:
+
+> In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+
+> _Examples:_
+
+```javascript
+highAndLow("1 2 3 4 5"); // return "5 1"
+highAndLow("1 2 -3 4 5"); // return "5 -3"
+highAndLow("1 9 3 4 -5"); // return "9 -5"
+```
+
+> _Notes:_
+
+- All numbers are valid Int32, no need to validate them.
+- There will always be at least one number in the input string.
+- Output string must be two numbers separated by a single space, and highest number is first.
+
+<details><summary><b>My Answers 😅</b></summary>
+
+```javascript
+function highAndLow(numbers) {
+  let n1 = numbers.split(" ").reduce((a, b) => `${Math.min(a, b)}`);
+  let n2 = numbers.split(" ").reduce((a, b) => `${Math.max(a, b)}`);
+
+  return `${n2} ${n1}`;
+}
+```
+
+</details>
+
+<details><summary><b>Best Answers ✅</b></summary>
+
+> Top ranked answer 🤯:
+
+```javascript
+function highAndLow(numbers) {
+  numbers = numbers.split(" ").map(Number);
+  return Math.max.apply(0, numbers) + " " + Math.min.apply(0, numbers);
+}
+```
+
+> 2nd ranked answer 👍:
+
+```javascript
+function highAndLow(numbers) {
+  numbers = numbers.split(" ");
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+}
+```
+
+</details>
+
+</details>
