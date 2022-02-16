@@ -379,7 +379,7 @@ highAndLow("1 9 3 4 -5"); // return "9 -5"
 - There will always be at least one number in the input string.
 - Output string must be two numbers separated by a single space, and highest number is first.
 
-<details><summary><b>My Answers 😅</b></summary>
+<details><summary><b>My Answer 😅</b></summary>
 
 ```javascript
 function highAndLow(numbers) {
@@ -418,7 +418,7 @@ function highAndLow(numbers) {
 
 ---
 
-<details><summary><b>Day 6</b></summary>
+<details><summary><b>Day 5*</b></summary>
 
 ####
 
@@ -426,9 +426,39 @@ function highAndLow(numbers) {
 
 ###### Description:
 
->
+> Jamie is a programmer, and James' girlfriend. She likes diamonds, and wants a diamond string from James. Since James doesn't know how to make this happen, he needs your help.
 
-<details><summary><b>My Answers 😅</b></summary>
+> You need to return a string that looks like a diamond shape when printed on the screen, using asterisk (\*) characters. Trailing spaces should be removed, and every line must be terminated with a newline character (\n).
+
+> Return `null/nil/None/...` if the input is an even number or negative, as it is not possible to print a diamond of even or negative size.
+
+###### Examples
+
+_A size 3 diamond:_
+
+```javascript
+ *
+***
+ *
+```
+
+...which would appear as a string of `" *\n***\n *\n"`
+
+_A size 5 diamond:_
+
+```javascript
+  *
+ ***
+*****
+ ***
+  *
+```
+
+...that is:
+
+`" *\n ***\n*****\n ***\n *\n"`
+
+<details><summary><b>My Answer 😅</b></summary>
 
 > Sorry, I couldn't think of an answer for this one so I had to unlock the solution 😅
 > So, I don't count this one 😉
