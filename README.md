@@ -11,7 +11,7 @@
 Ways to reach out to me 👇 <br />
 <a target="_blank" href="https://twitter.com/nomanoff_tech">Twitter</a> || <a href="https://www.linkedin.com/in/me-adam/">LinkedIn</a> || <a href="https://dev.to/nomanoff_tech">Blogs</a>
 
-> Btw, if you find some typos, feel free to leave a PR 😎
+_Btw, if you find some typos, feel free to leave a PR 😎_
 
 </div>
 
