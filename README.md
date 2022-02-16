@@ -415,3 +415,69 @@ function highAndLow(numbers) {
 </details>
 
 </details>
+
+---
+
+<details><summary><b>Day 6</b></summary>
+
+####
+
+> 6 kyu
+
+###### Description:
+
+>
+
+<details><summary><b>My Answers 😅</b></summary>
+
+> Sorry, I couldn't think of an answer for this one so I had to unlock the solution 😅
+> So, I don't count this one 😉
+
+</details>
+
+<details><summary><b>Best Answers ✅</b></summary>
+
+> Top ranked answer 🤯:
+
+```javascript
+function diamond(n) {
+  if (n <= 0 || n % 2 === 0) return null;
+  str = "";
+  for (let i = 0; i < n; i++) {
+    let len = Math.abs((n - 2 * i - 1) / 2);
+    str += " ".repeat(len);
+    str += "*".repeat(n - 2 * len);
+    str += "\n";
+  }
+  return str;
+}
+```
+
+> 2nd ranked answer 👍:
+
+```javascript
+function diamond(n) {
+  if (n % 2 == 0 || n < 1) return null;
+  var x = 0,
+    add,
+    diam = line(x, n);
+  while ((x += 2) < n) {
+    add = line(x / 2, n - x);
+    diam = add + diam + add;
+  }
+  return diam;
+} //z.
+
+function repeat(str, x) {
+  return Array(x + 1).join(str);
+}
+function line(spaces, stars) {
+  return repeat(" ", spaces) + repeat("*", stars) + "\n";
+}
+```
+
+</details>
+
+</details>
+
+---
