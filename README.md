@@ -512,7 +512,7 @@ function line(spaces, stars) {
 
 ---
 
-<details><summary><b>Day 6</b></summary>
+<details><summary><b>Day 6 (1)</b></summary>
 
 ####
 
@@ -597,6 +597,70 @@ function likes(names) {
     3: `${names[0]}, ${names[1]} and ${names[2]} like this`,
     4: `${names[0]}, ${names[1]} and ${names.length - 2} others like this`,
   }[Math.min(4, names.length)];
+}
+```
+
+</details>
+
+</details>
+
+---
+
+<details><summary><b>Day 6 (2)</b></summary>
+
+####
+
+> 7 kyu
+
+###### Description:
+
+> Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+> Examples:
+
+Input: `42145` Output: `54421`
+
+Input:` 145263` Output: `654321`
+
+Input: `123456789` Output: `987654321`
+
+<details><summary><b>My solution 😅</b></summary>
+
+```javascript
+function descendingOrder(n) {
+  let str = n
+    .toString()
+    .split("")
+    .sort((a, b) => a - b)
+    .reverse()
+    .join("");
+
+  return parseInt(str, 10);
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer 👍:
+
+```javascript
+function descendingOrder(n) {
+  return parseInt(String(n).split("").sort().reverse().join(""));
+}
+```
+
+> 2nd ranked answer ✅:
+
+```javascript
+function descendingOrder(n) {
+  return +(n + "")
+    .split("")
+    .sort(function (a, b) {
+      return b - a;
+    })
+    .join("");
 }
 ```
 
