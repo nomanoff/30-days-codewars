@@ -669,3 +669,67 @@ function descendingOrder(n) {
 </details>
 
 ---
+
+<details><summary><b>Day 7</b></summary>
+
+####
+
+> 6 kyu
+
+###### Description:
+
+>
+
+> Examples:
+
+<details><summary><b>My solution 😅</b></summary>
+
+> tolerable 🥱
+
+```javascript
+function createPhoneNumber(numbers) {
+  let str = numbers.join("");
+
+  return `(${str.slice(0, 3)}) ${str.slice(3, 6)}-${str.slice(6, 10)}`;
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer very clever 🔥. Imho:
+
+```javascript
+function createPhoneNumber(numbers) {
+  var format = "(xxx) xxx-xxxx";
+
+  for (var i = 0; i < numbers.length; i++) {
+    format = format.replace("x", numbers[i]);
+  }
+
+  return format;
+}
+```
+
+> 2nd ranked answer ✅. Similar to mine huh?
+
+```javascript
+function createPhoneNumber(numbers) {
+  numbers = numbers.join("");
+  return (
+    "(" +
+    numbers.substring(0, 3) +
+    ") " +
+    numbers.substring(3, 6) +
+    "-" +
+    numbers.substring(6)
+  );
+}
+```
+
+</details>
+
+</details>
+
+---
