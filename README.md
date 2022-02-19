@@ -870,3 +870,55 @@ function getMiddle(s) {
 </details>
 
 ---
+
+<details><summary><b>Day 8 (3)</b></summary>
+
+#### Bit Counting
+
+> 6 kyu
+
+###### Description:
+
+> Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.
+
+Examples:
+
+> The binary representation of `1234` is `10011010010`, so the function should return `5` in this case
+
+<details><summary><b>My solution 😅</b></summary>
+
+> Had no idea what binary was 🥲, but still...
+
+```javascript
+var countBits = function (n) {
+  return n
+    .toString(2)
+    .split("")
+    .filter((a) => a === "1").length;
+};
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer, one line 😬. Similar to mine, huh?
+
+```javascript
+countBits = (n) => n.toString(2).split("0").join("").length;
+```
+
+> 2nd ranked answer. I have no idea what is going on below 🤨
+
+```javascript
+function countBits(n) {
+  for (c = 0; n; n >>= 1) c += n & 1;
+  return c;
+}
+```
+
+</details>
+
+</details>
+
+---
