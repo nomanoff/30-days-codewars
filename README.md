@@ -925,22 +925,43 @@ function countBits(n) {
 
 <details><summary><b>Day 9 (1)</b></summary>
 
-####
+#### Counting Duplicates
 
 > 6 kyu
 
 ###### Description:
 
->
+Count the number of Duplicates
 
-Examples:
+> Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+
+Example:
+
+> "abcde" -> 0 `# no characters repeats more than once`
+> "aabbcde" -> 2 `# 'a' and 'b'`
+> "aabBcde" -> 2 `# 'a' occurs twice and 'b' twice (`b`and`B`)`
+> "indivisibility" -> 1 `# 'i' occurs six times`
+> "Indivisibilities" -> 2 `# 'i' occurs seven times and 's' occurs twice`
+> "aA11" -> 2 `# 'a' and '1'`
+> "ABBA" -> 2 `# 'A' and 'B' each occur twice`
 
 <details><summary><b>My solution 😅</b></summary>
 
->
-
 ```javascript
+function duplicateCount(text) {
+  let arr1 = text.toLowerCase().split("");
+  let arr2 = [];
+  arr1.filter((item, i) => {
+    if (arr2.indexOf(item) === -1) {
+      if (arr1.indexOf(item) !== i) {
+        arr2.push(item);
+      }
+    }
+    return arr2;
+  });
 
+  return arr2.length;
+}
 ```
 
 </details>
@@ -950,13 +971,86 @@ Examples:
 > Top ranked answer 😐:
 
 ```javascript
-
+function duplicateCount(text) {
+  return (
+    text
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("")
+      .match(/([^])\1+/g) || []
+  ).length;
+}
 ```
 
 > 2nd ranked answer ✅
 
 ```javascript
+function duplicateCount(text) {
+  return text
+    .toLowerCase()
+    .split("")
+    .filter(function (val, i, arr) {
+      return arr.indexOf(val) !== i && arr.lastIndexOf(val) === i;
+    }).length;
+}
+```
 
+</details>
+
+</details>
+
+---
+
+<details><summary><b>Day 9 (2)</b></summary>
+
+####
+
+> 7 kyu
+
+###### Description:
+
+> An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+Example: (Input --> Output)
+
+```javascript
+"Dermatoglyphics" --> true
+"aba" --> false
+"moOse" --> false (ignore letter case)
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+```javascript
+function isIsogram(str) {
+  return (
+    str
+      .toLowerCase()
+      .split("")
+      .filter((item, pos, arr) => arr.indexOf(item) == pos).length == str.length
+  );
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer 😐:
+
+```javascript
+function isIsogram(str) {
+  return !/(\w).*\1/i.test(str);
+}
+```
+
+> 2nd ranked answer ✅
+
+```javascript
+function isIsogram(str) {
+  return new Set(str.toUpperCase()).size == str.length;
+}
 ```
 
 </details>
