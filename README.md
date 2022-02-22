@@ -1198,3 +1198,80 @@ function duplicateEncode(word) {
 </details>
 
 ---
+
+<details><summary><b>Day 11 (1)</b></summary>
+
+#### Exes and Ohs
+
+> 7 kyu
+
+###### Description:
+
+> Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+Example:
+
+```javascript
+XO("ooxx") => true
+XO("xooxx") => false
+XO("ooxXm") => true
+XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+XO("zzoo") => false
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> I... I solved it 😬. It should have been 6kyu Imho 🤨
+
+```javascript
+function XO(str) {
+  let arr1 = [];
+  let arr2 = [];
+
+  str
+    .toLowerCase()
+    .split("")
+    .map((a) => {
+      if (a === "o") {
+        arr1.push(a);
+      }
+
+      if (a === "x") {
+        arr2.push(a);
+      }
+    });
+
+  return arr1.length === arr2.length;
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer ✅, f\*\*\* regex
+
+```javascript
+function XO(str) {
+  let x = str.match(/x/gi);
+  let o = str.match(/o/gi);
+  return (x && x.length) === (o && o.length);
+}
+```
+
+> 2nd ranked answer ✅, clever 🥲
+
+```javascript
+const XO = (str) => {
+  str = str.toLowerCase().split("");
+  return (
+    str.filter((x) => x === "x").length === str.filter((x) => x === "o").length
+  );
+};
+```
+
+</details>
+
+</details>
+
+---
