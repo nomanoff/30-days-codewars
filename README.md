@@ -1199,7 +1199,7 @@ function duplicateEncode(word) {
 
 ---
 
-<details><summary><b>Day 11 (1)</b></summary>
+<details><summary><b>Day 11</b></summary>
 
 #### Exes and Ohs
 
@@ -1268,6 +1268,52 @@ const XO = (str) => {
     str.filter((x) => x === "x").length === str.filter((x) => x === "o").length
   );
 };
+```
+
+</details>
+
+</details>
+
+---
+
+<details><summary><b>Day 12 *</b></summary>
+
+####
+
+> 6 kyu
+
+###### Description:
+
+>
+
+Example:
+
+```javascript
+
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> I... I solved it 😬. It should have been 6kyu Imho 🤨
+
+```javascript
+
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer ✅:
+
+```javascript
+
+```
+
+> 2nd ranked answer ✅, clever 🥲
+
+```javascript
+
 ```
 
 </details>
