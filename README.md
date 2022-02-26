@@ -1507,3 +1507,86 @@ const friend = (friends) => friends.filter((friend) => friend.length == 4);
 </details>
 
 ---
+
+<details><summary><b>Day 15</b></summary>
+
+####
+
+> 7 kyu
+
+###### Description:
+
+The Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would like your help with an application form that will tell prospective members which category they will be placed.
+
+To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
+
+Input:
+
+Input will consist of a list of pairs. Each pair contains information for a single potential member. Information consists of an integer for the person's age and an integer for the person's handicap.
+
+Output:
+
+Output will consist of a list of string values (in Haskell: Open or Senior) stating whether the respective member is to be placed in the senior or open category.
+
+Example:
+
+```javascript
+input = [
+  [18, 20],
+  [45, 2],
+  [61, 12],
+  [37, 6],
+  [21, 21],
+  [78, 9],
+];
+output = ["Open", "Open", "Senior", "Open", "Open", "Senior"];
+```
+
+<details><summary><b>My solution, meh 🥱</b></summary>
+
+>
+
+```javascript
+function openOrSenior(data) {
+  let newData = [];
+  let arr1 = data.map((a) => a[0] >= 55 && a[1] > 7);
+  let arr2 = arr1.filter((a) =>
+    a ? newData.push("Senior") : newData.push("Open")
+  );
+  return newData;
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer. Wow. With explanations 👏 👏 👏
+
+```javascript
+// Destructuring: [age, handicap] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+// Arrow Functions: () => {} https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+function openOrSenior(data) {
+  return data.map(([age, handicap]) =>
+    age > 54 && handicap > 7 ? "Senior" : "Open"
+  );
+}
+```
+
+> 2nd ranked answer 👍:
+
+```javascript
+function openOrSenior(data) {
+  function determineMembership(member) {
+    return member[0] >= 55 && member[1] > 7 ? "Senior" : "Open";
+  }
+  return data.map(determineMembership);
+}
+```
+
+</details>
+
+</details>
+
+---
