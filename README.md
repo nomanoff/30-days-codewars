@@ -1365,8 +1365,6 @@ function persistence(num) {
 
 ---
 
----
-
 <details><summary><b>Day 13</b></summary>
 
 #### Tribonacci Sequence
@@ -1448,6 +1446,60 @@ function tribonacci(signature, n) {
   }
   return result;
 }
+```
+
+</details>
+
+</details>
+
+---
+
+<details><summary><b>Day 14</b></summary>
+
+#### Friend or Foe?
+
+> 6 kyu
+
+###### Description:
+
+> Make a program that filters a list of strings and returns a list with only your friends name in it.
+
+> If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+
+> Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
+
+Example:
+
+```javascript
+friend[("Ryan", "Kieran", "Mark")]`shouldBe`[("Ryan", "Mark")];
+```
+
+<details><summary><b>My solution, meh 🥱</b></summary>
+
+> It wasn't a good fight for me
+
+```javascript
+function friend(friends) {
+  return friends.filter((a) => a.length === 4 && a);
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer (almost the same 😐):
+
+```javascript
+function friend(friends) {
+  return friends.filter((n) => n.length === 4);
+}
+```
+
+> 2nd ranked answer, meh 🥱
+
+```javascript
+const friend = (friends) => friends.filter((friend) => friend.length == 4);
 ```
 
 </details>
