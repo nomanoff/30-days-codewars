@@ -1590,3 +1590,66 @@ function openOrSenior(data) {
 </details>
 
 ---
+
+<details><summary><b>Day 16</b></summary>
+
+####
+
+> 7 kyu
+
+###### Description:
+
+ATM machines allow `4` or `6` digit PIN codes and PIN codes cannot contain anything but exactly `4` digits or exactly `6` digits.
+
+If the `function` is passed a valid PIN `string`, return `true`, else return `false`.
+
+```javascript
+"1234"   -->  true
+"12345"  -->  false
+"a234"   -->  false
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> Honestly, I searched to find the number tester regex from google. Is this a cheating 😅? I don't care.
+
+```javascript
+function validatePIN(pin) {
+  // regex, baby
+  return (pin.length === 4 || pin.length === 6) && /^[0-9]*$/.test(pin);
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer 👀:
+
+```javascript
+function validatePIN(pin) {
+  return /^(\d{4}|\d{6})$/.test(pin);
+}
+```
+
+> 2nd ranked answer 👍:
+
+```javascript
+function validatePIN(pin) {
+  var pinlen = pin.length;
+  var isCorrectLength = pinlen == 4 || pinlen == 6;
+  var hasOnlyNumbers = pin.match(/^\d+$/);
+
+  if (isCorrectLength && hasOnlyNumbers) {
+    return true;
+  }
+
+  return false;
+}
+```
+
+</details>
+
+</details>
+
+---
