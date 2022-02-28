@@ -1653,3 +1653,45 @@ function validatePIN(pin) {
 </details>
 
 ---
+
+<details><summary><b>Day 17</b></summary>
+
+####
+
+> 7 kyu
+
+###### Description:
+
+```javascript
+
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+>
+
+```javascript
+
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer 👀:
+
+```javascript
+
+```
+
+> 2nd ranked answer 👍:
+
+```javascript
+
+```
+
+</details>
+
+</details>
+
+---
