@@ -1658,7 +1658,7 @@ function validatePIN(pin) {
 
 ####
 
-> 7 kyu
+> kyu
 
 ###### Description:
 
@@ -1700,7 +1700,7 @@ function validatePIN(pin) {
 
 ####
 
-> 6 kyu
+> kyu
 
 ###### Description:
 
