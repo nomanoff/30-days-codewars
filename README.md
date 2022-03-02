@@ -1829,3 +1829,41 @@ function countPositivesSumNegatives(input) {
 </details>
 
 ---
+
+<details><summary><b>Day 19 (1)</b></summary>
+
+#### Reversed Words
+
+> 8 kyu
+
+###### Description:
+
+Complete the solution so that it reverses all of the words within the string passed in.
+
+Example:
+
+```javascript
+"The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> Honestly, this one is very close to my heart 😭. That's why I had to add this here 😁
+
+```javascript
+function reverseWords(str) {
+  return str.split(" ").reverse().join(" ");
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Literally, mine is the best solution 😅
+
+</details>
+
+</details>
+
+---
