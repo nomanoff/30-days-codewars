@@ -1739,38 +1739,89 @@ function digPow(n, p) {
 
 <details><summary><b>Day 18</b></summary>
 
-####
+#### Count of positives / sum of negatives
 
-> kyu
+> 8 kyu
 
 ###### Description:
 
-```javascript
+Given an array of integers.
 
+Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
+
+If the input is an empty array or is null, return an empty array.
+
+Example
+
+```javascript
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15] return [10, -65].
 ```
 
 <details><summary><b>My solution 😅</b></summary>
 
->
+> Though 8kyu, it was hard
 
 ```javascript
+function countPositivesSumNegatives(input) {
+  if (!input) {
+    return [];
+  }
 
+  if (!input.length) {
+    return [];
+  }
+
+  let posN = [],
+    negN = [];
+
+  input.map((a) => {
+    if (a > 0) {
+      posN.push(a);
+    } else {
+      negN.push(a);
+    }
+  });
+
+  posN = posN.length;
+  negN = negN.reduce((a, b) => a + b, 0);
+
+  return [posN, negN];
+}
 ```
 
 </details>
 
 <details><summary><b>Best solutions ✅</b></summary>
 
-> Top ranked answer 👀:
+> Top ranked answer ✅:
 
 ```javascript
+function countPositivesSumNegatives(input) {
+  if (input == null || input.length == 0) return [];
 
+  var positive = 0;
+  var negative = 0;
+
+  for (var i = 0, l = input.length; i < l; ++i) {
+    if (input[i] > 0) ++positive;
+    else negative += input[i];
+  }
+
+  return [positive, negative];
+}
 ```
 
-> 2nd ranked answer 👍:
+> 2nd ranked answer 👀:
 
 ```javascript
-
+function countPositivesSumNegatives(input) {
+  return input && input.length
+    ? [
+        input.filter((p) => p > 0).length,
+        input.filter((n) => n < 0).reduce((a, b) => a + b, 0),
+      ]
+    : [];
+}
 ```
 
 </details>
