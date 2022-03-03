@@ -1911,7 +1911,7 @@ function addBinary(a, b) {
 
 <details><summary><b>Day 20</b></summary>
 
-####
+#### Ones and Zeros
 
 > 7 kyu
 
