@@ -1975,26 +1975,57 @@ Example
 
 <details><summary><b>My solution 😅</b></summary>
 
-> huh...
+> I didn't use regex though 👊
 
 ```javascript
+function toCamelCase(str) {
+  if (str.length === 0) return "";
 
+  let arr;
+  str.includes("-") ? (arr = str.split("-")) : (arr = str.split("_"));
+
+  if (arr[0].charAt(0) === arr[0].charAt(0).toUpperCase()) {
+    return arr
+      .map((a) => {
+        let le = a.charAt(0).toUpperCase();
+        a = a.slice(1);
+        return le + a;
+      })
+      .join("");
+  } else {
+    let first = arr.shift();
+    let another = arr.map((a) => {
+      let le = a.charAt(0).toUpperCase();
+      a = a.slice(1);
+      return le + a;
+    });
+    return [first, ...another].join("");
+  }
+  return arr;
+}
 ```
 
 </details>
 
 <details><summary><b>Best solutions ✅</b></summary>
 
-> Top ranked answer ✅:
+> Top ranked answer, meh...:
 
 ```javascript
-
+function toCamelCase(str) {
+  var regExp = /[-_]\w/gi;
+  return str.replace(regExp, function (match) {
+    return match.charAt(1).toUpperCase();
+  });
+}
 ```
 
-> 2nd ranked answer 👀:
+> 2nd ranked answer 🧐:
+
+This was also using regex anyway 😒
 
 ```javascript
-
+regex;
 ```
 
 </details>
