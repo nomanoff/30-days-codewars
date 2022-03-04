@@ -1955,3 +1955,50 @@ const binaryArrayToNumber = (arr) => {
 </details>
 
 ---
+
+---
+
+<details><summary><b>Day 21</b></summary>
+
+#### Convert string to camel case
+
+> 6 kyu
+
+###### Description:
+
+Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+
+Example
+
+`"the-stealth-warrior"` gets converted to `"theStealthWarrior"`
+`"The_Stealth_Warrior"` gets converted to `"TheStealthWarrior"`
+
+<details><summary><b>My solution 😅</b></summary>
+
+> huh...
+
+```javascript
+
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> Top ranked answer ✅:
+
+```javascript
+
+```
+
+> 2nd ranked answer 👀:
+
+```javascript
+
+```
+
+</details>
+
+</details>
+
+---
