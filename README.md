@@ -1956,8 +1956,6 @@ const binaryArrayToNumber = (arr) => {
 
 ---
 
----
-
 <details><summary><b>Day 21</b></summary>
 
 #### Convert string to camel case
@@ -2026,6 +2024,62 @@ This was also using regex anyway 😒
 
 ```javascript
 regex;
+```
+
+</details>
+
+</details>
+
+---
+
+<details><summary><b>Day 22 (1)</b></summary>
+
+#### Detect Pangram
+
+> 6 kyu
+
+###### Description:
+
+A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+
+Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+
+<details><summary><b>My solution 😅</b></summary>
+
+> Unique solution eh... 😁
+
+```javascript
+function isPangram(string) {
+  let al = "abcdefghijklmnopqrstuvwxyz";
+  return (
+    al.split("").filter((a) => string.toLowerCase().includes(a)).length === 26
+  );
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> 1st ranked answer 🥲:
+
+```javascript
+function isPangram(string) {
+  string = string.toLowerCase();
+  return "abcdefghijklmnopqrstuvwxyz".split("").every(function (x) {
+    return string.indexOf(x) !== -1;
+  });
+}
+```
+
+> 2nd ranked answer 🧐:
+
+```javascript
+function isPangram(string) {
+  return "abcdefghijklmnopqrstuvwxyz"
+    .split("")
+    .every((x) => string.toLowerCase().includes(x));
+}
 ```
 
 </details>
