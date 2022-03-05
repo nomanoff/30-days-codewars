@@ -2155,3 +2155,77 @@ var number = function (busStops) {
 </details>
 
 ---
+
+<details><summary><b>Day 22 (3)</b></summary>
+
+#### Simple Pig Latin
+
+> 5 kyu
+
+###### Description:
+
+Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+Examples:
+
+```javascript
+pigIt("Pig latin is cool"); // igPay atinlay siay oolcay
+pigIt("Hello world !"); // elloHay orldway !
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> Wooo.. 5kyu, huh?
+
+```javascript
+function pigIt(str) {
+  let punc = "!.?";
+  let arr = str
+    .split(" ")
+    .map((a) => {
+      if (!punc.includes(a)) {
+        let firstL = a.charAt(0);
+        a = a.slice(1);
+
+        return a + firstL + "ay";
+      } else {
+        return a;
+      }
+    })
+    .join(" ");
+
+  return arr;
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> 1st ranked answer 🥲. Regex... Cheaters 😒
+
+```javascript
+function pigIt(str) {
+  return str.replace(/(\w)(\w*)(\s|$)/g, "$2$1ay$3");
+}
+```
+
+> 2nd ranked answer 🧐:
+
+```javascript
+function pigIt(str) {
+  var arrayWord = str.split(" ");
+  return arrayWord
+    .map(function (word) {
+      var firstLetter = word.charAt(0);
+      return word.slice(1) + firstLetter + "ay";
+    })
+    .join(" ");
+}
+```
+
+</details>
+
+</details>
+
+---
