@@ -2087,3 +2087,71 @@ function isPangram(string) {
 </details>
 
 ---
+
+<details><summary><b>Day 22 (2)</b></summary>
+
+#### Number of People in the Bus
+
+> 7 kyu
+
+###### Description:
+
+There is a bus moving in the city, and it takes and drop some people in each bus stop.
+
+You are provided with a list (or array) of integer pairs. Elements of each pair represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
+
+Your task is to return number of people who are still in the bus after the last bus station (after the last array). Even though it is the last bus stop, the bus is not empty and some people are still in the bus, and they are probably sleeping there :D
+
+Take a look on the test cases.
+
+Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the return integer can't be negative.
+
+The second value in the first integer array is 0, since the bus is empty in the first bus stop.
+
+<details><summary><b>My solution 😅</b></summary>
+
+> Umm.. eh.. meh...
+
+```javascript
+var number = function (busStops) {
+  let iN = 0;
+  let ouT = 0;
+
+  busStops.map((a) => {
+    iN += a[0];
+    ouT += a[1];
+  });
+
+  return iN - ouT;
+};
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> 1st ranked answer 🥲:
+
+```javascript
+const number = (busStops) =>
+  busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+```
+
+> 2nd ranked answer 🧐:
+
+```javascript
+var number = function (busStops) {
+  var totalPeople = 0;
+  for (var i = 0; i < busStops.length; i++) {
+    totalPeople += busStops[i][0];
+    totalPeople -= busStops[i][1];
+  }
+  return totalPeople;
+};
+```
+
+</details>
+
+</details>
+
+---
