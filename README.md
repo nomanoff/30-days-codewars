@@ -2229,3 +2229,74 @@ function pigIt(str) {
 </details>
 
 ---
+
+<details><summary><b>Day 23 (1)</b></summary>
+
+#### Moving Zeros To The End
+
+> 5 kyu
+
+###### Description:
+
+Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+```javascript
+moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]); // returns[false,1,1,2,1,3,"a",0,0]
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> Wooo.. 5kyu, again?
+
+```javascript
+function moveZeros(arr) {
+  let backA = [];
+  let forvA = [];
+
+  arr.map((a) => {
+    a === 0 ? backA.push(a) : forvA.push(a);
+  });
+
+  return forvA.concat(backA);
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> 1st ranked answer ✅;
+
+```javascript
+var moveZeros = function (arr) {
+  return arr
+    .filter(function (x) {
+      return x !== 0;
+    })
+    .concat(
+      arr.filter(function (x) {
+        return x === 0;
+      })
+    );
+};
+```
+
+> 2nd ranked answer 🧐:
+
+```javascript
+var moveZeros = function (arr) {
+  var filtedList = arr.filter(function (num) {
+    return num !== 0;
+  });
+  var zeroList = arr.filter(function (num) {
+    return num === 0;
+  });
+  return filtedList.concat(zeroList);
+};
+```
+
+</details>
+
+</details>
+
+---
