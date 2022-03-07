@@ -2371,3 +2371,70 @@ function oddOrEven(array) {
 </details>
 
 ---
+
+<details><summary><b>Day 24 (1)</b></summary>
+
+#### Find the unique number
+
+> 6 kyu
+
+###### Description:
+
+There is an array with some numbers. All numbers are equal except for one. Try to find it!
+
+Examples:
+
+```javascript
+findUniq([1, 1, 1, 2, 1, 1]) === 2;
+findUniq([0, 0, 0.55, 0, 0]) === 0.55;
+```
+
+It’s guaranteed that array contains at least 3 numbers.
+
+<details><summary><b>My solution 😅</b></summary>
+
+> Meh...
+
+```javascript
+function findUniq(arr) {
+  let random = arr[0];
+  let arr1 = [];
+  let arr2 = [];
+
+  arr.filter((a, i) => (a === random ? arr1.push(a) : arr2.push(a)));
+
+  console.log(arr1, arr2);
+  if (arr1.length > arr2.length) {
+    return arr2[0];
+  } else {
+    return arr1[0];
+  }
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> 1st ranked answer ✅;
+
+```javascript
+function findUniq(arr) {
+  arr.sort((a, b) => a - b);
+  return arr[0] == arr[1] ? arr.pop() : arr[0];
+}
+```
+
+> 2nd ranked answer 👍: Loved it!
+
+```javascript
+function findUniq(arr) {
+  return arr.find((n) => arr.indexOf(n) === arr.lastIndexOf(n));
+}
+```
+
+</details>
+
+</details>
+
+---
