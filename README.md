@@ -2372,7 +2372,7 @@ function oddOrEven(array) {
 
 ---
 
-<details><summary><b>Day 24 (1)</b></summary>
+<details><summary><b>Day 24</b></summary>
 
 #### Find the unique number
 
@@ -2491,6 +2491,63 @@ const reverseSeq = (n) => {
     .fill(0)
     .map((e, i) => n - i);
 };
+```
+
+</details>
+
+</details>
+
+---
+
+<details><summary><b>Day 25 (2)</b></summary>
+
+#### Reversed sequence
+
+> 7 kyu
+
+###### Description:
+
+Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+Examples:
+
+```javascript
+solution("abc", "bc"); // returns true
+solution("abc", "d"); // returns false
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> Meh... Anyway...
+
+```javascript
+function solution(str, ending) {
+  if (!ending.length) {
+    return true;
+  } else {
+    return str.substr(-ending.length) === ending;
+  }
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> 1st ranked answer. I didn't know endsWith existed 😬:
+
+```javascript
+function solution(str, ending) {
+  return str.endsWith(ending);
+}
+```
+
+> 2nd ranked answer 👀:
+
+```javascript
+function solution(str, ending) {
+  return new RegExp(ending + "$", "i").test(str);
+}
 ```
 
 </details>
