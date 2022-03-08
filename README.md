@@ -2438,3 +2438,63 @@ function findUniq(arr) {
 </details>
 
 ---
+
+<details><summary><b>Day 25 (1)</b></summary>
+
+#### Reversed sequence
+
+> 8 kyu
+
+###### Description:
+
+Build a function that returns an array of integers from n to 1 where n>0.
+
+```javascript
+Example : n=5 --> [5,4,3,2,1]
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> Meh...
+
+```javascript
+const reverseSeq = (n) => {
+  let arr = [];
+  for (let i = n; i >= 1; i--) {
+    arr.push(i);
+  }
+  return arr;
+};
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> 1st ranked answer ✅;
+
+```javascript
+const reverseSeq = (n) => {
+  let arr = [];
+  for (let i = n; i > 0; i--) {
+    arr.push(i);
+  }
+  return arr;
+};
+```
+
+> 2nd ranked answer 👀:
+
+```javascript
+const reverseSeq = (n) => {
+  return Array(n)
+    .fill(0)
+    .map((e, i) => n - i);
+};
+```
+
+</details>
+
+</details>
+
+---
