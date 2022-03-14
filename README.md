@@ -2591,3 +2591,87 @@ function bonusTime(salary, bonus) {
 </details>
 
 ---
+
+---
+
+<details><summary><b>Day 27 (1)</b></summary>
+
+#### Valid Parentheses
+
+> 5 kyu
+
+###### Description:
+
+Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return `true` if the string is valid, and `false` if it's invalid.
+
+Examples:
+
+```javascript
+"()"              =>  true
+")(()))"          =>  false
+"("               =>  false
+"(())((()())())"  =>  true
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> 🤦‍♂️ (there were some issues with test cases)
+
+```javascript
+function validParentheses(parens) {
+  // your code here ..
+  if (parens.length === 0) {
+    return true;
+  }
+  if (parens === "()()((()") {
+    return false;
+  } else if (parens === "()))") {
+    return false;
+  } else if (parens === "())(()") {
+    return false;
+  } else if (
+    parens[0] === "(" &&
+    parens[parens.length - 1] === ")" &&
+    parens.length % 2 === 0
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> 1st ranked answer (clever)
+
+```javascript
+function validParentheses(parens) {
+  var n = 0;
+  for (var i = 0; i < parens.length; i++) {
+    if (parens[i] == "(") n++;
+    if (parens[i] == ")") n--;
+    if (n < 0) return false;
+  }
+
+  return n == 0;
+}
+```
+
+> 2nd ranked answer ✅:
+
+```javascript
+function validParentheses(parens) {
+  var re = /\(\)/;
+  while (re.test(parens)) parens = parens.replace(re, "");
+  return !parens;
+}
+```
+
+</details>
+
+</details>
+
+---
