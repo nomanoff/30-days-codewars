@@ -2675,3 +2675,95 @@ function validParentheses(parens) {
 </details>
 
 ---
+
+<details><summary><b>Day 28</b></summary>
+
+#### Sort the odd
+
+> 6 kyu
+
+###### Description:
+
+You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+Examples:
+
+```javascript
+[7, 1]  =>  [1, 7]
+[5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> very very long solution but it counts 😅
+
+```javascript
+function sortArray(array) {
+  let oddIndexes = [];
+  let odd = [];
+  let even = [];
+
+  array.filter((a, i) => {
+    if (a % 2 !== 0) {
+      oddIndexes.push(i);
+      odd.push(a);
+    } else {
+      even.push(a);
+    }
+  });
+
+  odd = odd.sort((a, b) => a - b);
+  for (let i = 0; i < oddIndexes.length; i++) {
+    even.splice(oddIndexes[i], 0, odd[i]);
+  }
+
+  return even;
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> 1st ranked answer (impressive)
+
+```javascript
+function sortArray(array) {
+  const odd = array.filter((x) => x % 2).sort((a, b) => a - b);
+  return array.map((x) => (x % 2 ? odd.shift() : x));
+}
+```
+
+> 2nd ranked answer (my style):
+
+```javascript
+function sortArray(array) {
+  var odds = [];
+  //loop, if it's odd, push to odds array
+  for (var i = 0; i < array.length; ++i) {
+    if (array[i] % 2 !== 0) {
+      odds.push(array[i]);
+    }
+  }
+  //sort odds from smallest to largest
+  odds.sort(function (a, b) {
+    return a - b;
+  });
+
+  //loop through array, replace any odd values with sorted odd values
+  for (var j = 0; j < array.length; ++j) {
+    if (array[j] % 2 !== 0) {
+      array[j] = odds.shift();
+    }
+  }
+
+  return array;
+}
+```
+
+</details>
+
+</details>
+
+---
