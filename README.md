@@ -2767,3 +2767,74 @@ function sortArray(array) {
 </details>
 
 ---
+
+<details><summary><b>Day 29 (if ur not a programmer then it is Day 30 😅)</b></summary>
+
+#### Split Strings
+
+> 6 kyu
+
+###### Description:
+
+Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('\_').
+
+Examples:
+
+```javascript
+* 'abc' =>  ['ab', 'c_']
+* 'abcdef' => ['ab', 'cd', 'ef']
+```
+
+<details><summary><b>My solution 😅</b></summary>
+
+> I don't know regex btw
+
+```javascript
+function solution(str) {
+  if (str.length === 0) {
+    return [];
+  }
+
+  if (str.length % 2 == 0) {
+    return str.match(/.{1,2}/g);
+  } else {
+    let arr = str.match(/.{1,2}/g);
+    return arr.map((a) => (a.length === 1 ? a + "_" : a));
+  }
+}
+```
+
+</details>
+
+<details><summary><b>Best solutions ✅</b></summary>
+
+> 1st ranked answer (meh, regex)
+
+```javascript
+function solution(s) {
+  return (s + "_").match(/.{2}/g) || [];
+}
+```
+
+> 2nd ranked answer (dude is legit):
+
+```javascript
+function solution(str) {
+  var i = 0;
+  var result = new Array();
+  if (str.length % 2 !== 0) {
+    str = str + "_";
+  }
+  while (i < str.length) {
+    result.push(str[i] + str[i + 1]);
+    i += 2;
+  }
+  return result;
+}
+```
+
+</details>
+
+</details>
+
+---
